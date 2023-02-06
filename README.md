@@ -1,4 +1,4 @@
-# Installing_mySQL_on_Raspberry_Pi
+# Installing_MySQL_on_Raspberry_Pi
 
 To burn the image on a SD card
 
