@@ -1,5 +1,9 @@
 # Installing_MySQL_on_Raspberry_Pi
 
+(Note. Set up a cron job to do sudo apt-get update and sudo apt-get upgrade right after installation to save time when you are ready to start work )
+
+Steps:
+
 To burn the image on a SD card
 
 Launch the RPi Imager
