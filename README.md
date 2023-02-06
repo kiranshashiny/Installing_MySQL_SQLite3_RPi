@@ -98,7 +98,17 @@ MariaDB [(none)]> exit;
 Bye
 
 
-pi@shashirpi:~ $ sudo mysql -u amrith -p mariadb ( -u amrith is the username, and mariadb is the name of the database here, Password is asked next in the command line. )
+pi@shashirpi:~ $ sudo mysql -u amrith -p mariadb ( -u amrith is the username, and mariadb is the name of the database here, 
+Password is asked next in the command line. )
+
+MariaDB [mariadb]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mariadb            |
++--------------------+
+2 rows in set (0.01 sec)
 
 ```
 
