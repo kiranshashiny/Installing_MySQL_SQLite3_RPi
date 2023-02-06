@@ -27,5 +27,80 @@ and now write the image "Raspberry Pi 32 bit "to the SD card.
 
 First
 
+* sudo su -   ( Im logged in as Amrith )
 * sudo apt-get update
 * sudo apt-get upgrade
+
+![image](https://user-images.githubusercontent.com/14288989/216918453-0d4f000c-fee0-430f-982a-ab97db24cc44.png)
+
+Note : Installing mysql-server does not work - see below !
+
+```
+root@shashirpi:~# sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package mysql-server is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  mariadb-server-10.0
+
+E: Package 'mysql-server' has no installation candidate
+
+```
+
+https://linuxhint.com/install-setup-mariadb-server-raspberry-pi/
+
+So installing mariadb-server-10.0
+
+
+```
+$ sudo mysql_secure_installation
+
+
+Reload privilege tables now? [Y/n] n
+ ... skipping.
+
+Cleaning up...
+
+All done!  If you've completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks for using MariaDB!
+```
+
+![image](https://user-images.githubusercontent.com/14288989/216920867-effc29b8-4ab6-4def-b0d6-fef0d9e053be.png)
+
+```
+MariaDB [(none)]> create database mariadb;
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [(none)]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mariadb            |
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.00 sec)
+
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON mariadb.* TO 'amrith'@'localhost' IDENTIFIED BY 'amrith'
+    -> ;
+Query OK, 0 rows affected (0.00 sec)
+MariaDB [(none)]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> exit;
+Bye
+
+
+pi@shashirpi:~ $ sudo mysql -u amrith -p mariadb ( -u amrith is the username, and mariadb is the name of the database here, Password is asked next in the command line. )
+
+```
+
+
+
