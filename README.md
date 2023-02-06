@@ -112,5 +112,47 @@ MariaDB [mariadb]> show databases;
 
 ```
 
+For creating a table to hold the stocks.
+
+### Data to be inserted
+```
+   1 date,open,high,low,close,volume,Name
+   2 2013-02-08,67.7142,68.4014,66.8928,67.8542,158168416,AAPL
+   3 2013-02-11,68.0714,69.2771,67.6071,68.5614,129029425,AAPL
+```
+
+### stocks.sql
+
+```
+use mariadb
+create table stocks (
+    stock_id int auto_increment,
+    stock_date  date,
+
+    stock_open  decimal ( 15,2),
+    stock_high  decimal ( 15,2),
+    stock_low   decimal ( 15,2),
+    stock_close decimal ( 15,2),
+    stock_volume int not null,
+
+    stock_name varchar(50) not null,
+    primary key(stock_id)
+);
+```
+
+### insert.sql
+
+```
+insert into stocks ( stock_date, stock_open, stock_high, stock_low, stock_close, stock_volume, stock_name) values ( 2013-02-08,67.7142,68.4014,66.8928,67.8542,158168416,"AAPL");
+
+insert into stocks ( stock_date, stock_open, stock_high, stock_low, stock_close, stock_volume, stock_name) values ( 2013-02-08,67.7142,68.4014,66.8928,67.8542,158168416,"AAPL");
+
+```
+
+#### source insert.sql
+will insert the data
+
+
+
 
 
