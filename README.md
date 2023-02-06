@@ -22,5 +22,5 @@ and now write the image to the SD card.
 
 First
 
--- sudo apt-get update
--- sudo apt-get upgrade
+.. sudo apt-get update
+.. sudo apt-get upgrade
