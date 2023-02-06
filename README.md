@@ -16,10 +16,10 @@ At this stage -DO NOT CLICK on the "Choose OS", instead click and select Erase
 Choose Storage and select the SD card
 and now write the image "Raspberry Pi 32 bit "to the SD card.
 
---
+---
 
 
-### Installing MySQL on Raspberry pi
+## Installing MySQL on Raspberry pi
 
 First
 
