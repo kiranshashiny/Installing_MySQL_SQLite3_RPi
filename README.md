@@ -165,11 +165,32 @@ select stock_volume from stocks;
 
 Minimum
 
-select minimum *** select min(stock_open), stock_date from stocks;
+select min(stock_open), stock_date from stocks;
 +-----------------+------------+
 | min(stock_open) | stock_date |
 +-----------------+------------+
 |          126.01 | 2022-02-07 |
 +-----------------+------------+
 1 row in set (0.00 sec)
+
+
+Maximum  and Minimum
+
+Use DESC keyword for reverse sort 
+
+MariaDB [mariadb]> select stock_date, stock_open from stocks order by stock_open desc limit 1;
++------------+------------+
+| stock_date | stock_open |
++------------+------------+
+| 2022-03-30 |     178.55 |
++------------+------------+
+1 row in set (0.01 sec)
+
+MariaDB [mariadb]> select stock_date, stock_open from stocks order by stock_open  limit 1;
++------------+------------+
+| stock_date | stock_open |
++------------+------------+
+| 2023-01-06 |     126.01 |
++------------+------------+
+1 row in set (0.01 sec)
 ```
