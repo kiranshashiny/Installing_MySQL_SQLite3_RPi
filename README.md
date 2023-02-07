@@ -216,12 +216,13 @@ Script to download historical data from finance.yahoo.com
 
 
 ```
+./gethistory.sh
+
 
 stockslist=`cat stocks.txt`
 for stock in $stockslist
 do
 echo $stock
-echo 'here'
 curl https://query1.finance.yahoo.com/v7/finance/download/$stock?period2=1675744747&period1=1644208747\
 &interval=1d\
 &events=history\
