@@ -237,3 +237,12 @@ To check if the stock is less than 230 $ - do this.
 ```
 cat ZTS.dat |head -n2 |grep -v Date |awk -F"," '{if ($2<230) print $2}'
 ```
+
+
+To pass an external variable into awk, notice the use of x=$stock and while printing do not use $x, just x. 
+
+```
+stock="MSFT.dat"
+cat $stock |head -n2 |grep -v Date |awk -v x=$stock -F"," '{if ($2<20) {print $2, x}}'
+
+```
