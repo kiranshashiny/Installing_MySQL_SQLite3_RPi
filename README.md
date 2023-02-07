@@ -158,16 +158,18 @@ will insert the data
 
 
 ### some commands
-
+```
 select count(*) from stocks;
 select stock_open, stock_close from stocks;
 select stock_volume from stocks;
 
+Minimum
 
-### select minimum *** select min(stock_open), stock_date from stocks;
+select minimum *** select min(stock_open), stock_date from stocks;
 +-----------------+------------+
 | min(stock_open) | stock_date |
 +-----------------+------------+
 |          126.01 | 2022-02-07 |
 +-----------------+------------+
 1 row in set (0.00 sec)
+```
