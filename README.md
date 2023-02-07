@@ -231,3 +231,9 @@ curl https://query1.finance.yahoo.com/v7/finance/download/$stock?period2=1675744
 done
 
 ```
+
+To check if the stock is less than 230 $ - do this.
+
+```
+cat ZTS.dat |head -n2 |grep -v Date |awk -F"," '{if ($2<230) print $2}'
+```
