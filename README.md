@@ -246,3 +246,15 @@ stock="MSFT.dat"
 cat $stock |head -n2 |grep -v Date |awk -v x=$stock -F"," '{if ($2<20) {print $2, x}}'
 
 ```
+
+Printing stocks in S&P under 20 $
+```
+#!/bin/bash
+
+stockslist=`ls *.dat`
+   
+for stock in $stockslist
+do
+   cat $stock |head -n2 |grep -v Date |awk -v x=$stock -F"," '{if ($2<20) {print $2, x}}'
+done
+```
