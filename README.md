@@ -163,7 +163,7 @@ select count(*) from stocks;
 select stock_open, stock_close from stocks;
 select stock_volume from stocks;
 
-Minimum
+Minimum ( incorrect approach !!!  this gives wrong answer in MariaDB - DON'T USE )
 
 select min(stock_open), stock_date from stocks;
 +-----------------+------------+
@@ -178,6 +178,9 @@ Maximum  and Minimum
 
 Use DESC keyword for reverse sort 
 
+MAXIMUM
+
+
 MariaDB [mariadb]> select stock_date, stock_open from stocks order by stock_open desc limit 1;
 +------------+------------+
 | stock_date | stock_open |
@@ -186,11 +189,25 @@ MariaDB [mariadb]> select stock_date, stock_open from stocks order by stock_open
 +------------+------------+
 1 row in set (0.01 sec)
 
-MariaDB [mariadb]> select stock_date, stock_open from stocks order by stock_open  limit 1;
+
+MINIMUM
+
+select stock_date, stock_open from stocks order by stock_open  limit 1;
 +------------+------------+
 | stock_date | stock_open |
 +------------+------------+
 | 2023-01-06 |     126.01 |
++------------+------------+
+1 row in set (0.01 sec)
+
+
+PRINT THE LAST ENTRY in the table ( 7 Feb 2023 )
+
+select stock_date, stock_open from stocks order by stock_date desc limit 1;
++------------+------------+
+| stock_date | stock_open |
++------------+------------+
+| 2023-02-03 |     148.03 |
 +------------+------------+
 1 row in set (0.01 sec)
 ```
