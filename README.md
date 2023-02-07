@@ -128,11 +128,12 @@ use mariadb
 create table stocks (
     stock_id int auto_increment,
     stock_date  date,
-
+    
     stock_open  decimal ( 15,2),
     stock_high  decimal ( 15,2),
     stock_low   decimal ( 15,2),
     stock_close decimal ( 15,2),
+    stock_adj_close decimal ( 15,2),
     stock_volume int not null,
 
     stock_name varchar(50) not null,
@@ -140,7 +141,7 @@ create table stocks (
 );
 ```
 
-### insert.sql
+### insert.sql - watch for the semi colon at the end of each line, or else errors out.
 
 ```
 insert into stocks ( stock_date, stock_open, stock_high, stock_low, stock_close, stock_volume, stock_name) values ( 2013-02-08,67.7142,68.4014,66.8928,67.8542,158168416,"AAPL");
@@ -156,3 +157,17 @@ will insert the data
 
 
 
+### some commands
+
+select count(*) from stocks;
+select stock_open, stock_close from stocks;
+select stock_volume from stocks;
+
+
+### select minimum *** select min(stock_open), stock_date from stocks;
++-----------------+------------+
+| min(stock_open) | stock_date |
++-----------------+------------+
+|          126.01 | 2022-02-07 |
++-----------------+------------+
+1 row in set (0.00 sec)
