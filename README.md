@@ -258,3 +258,11 @@ do
    cat $stock |head -n2 |grep -v Date |awk -v x=$stock -F"," '{if ($2<20) {print $2, x}}'
 done
 ```
+
+
+select stocks under a certain stock price
+
+```
+select * from stocks where stock_open < 130;
+
+```
