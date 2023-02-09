@@ -308,5 +308,36 @@ sudo apt-get install libsqlite3-dev
 
 ```
 
+## Programming with sqlite3 C connector
+
+```
+#include <sqlite3.h>
+#include <stdio.h>
+
+void main() {
+
+   printf ("hello world from sqllite3 header file inclusion\n");
+
+   sqlite3 *db;
+   char *zErrMsg = 0;
+   int rc;
+
+   rc = sqlite3_open("test.db", &db);
+
+   if( rc ) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+      return;
+   } else {
+      fprintf(stderr, "Opened database successfully\n");
+   }
+   sqlite3_close(db);
+   return;
+}
+```
+
+Compiling
+```
+cc -o test test.c -l sqlite3
+```
 
 ![image](https://user-images.githubusercontent.com/14288989/217795952-62b2a7c2-f177-4cdb-a595-1e0964c7e3cd.png)
