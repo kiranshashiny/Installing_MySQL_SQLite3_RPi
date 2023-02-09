@@ -307,3 +307,6 @@ sudo apt install sqlite3
 sudo apt-get install libsqlite3-dev
 
 ```
+
+
+![image](https://user-images.githubusercontent.com/14288989/217795952-62b2a7c2-f177-4cdb-a595-1e0964c7e3cd.png)
