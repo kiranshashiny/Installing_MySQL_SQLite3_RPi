@@ -266,3 +266,13 @@ select stocks under a certain stock price
 select * from stocks where stock_open < 130;
 
 ```
+
+
+## Installing sqlite3 on Rpi.
+
+```
+sudo apt install sqlite3
+
+sudo apt-get install libsqlite3-dev
+
+```
