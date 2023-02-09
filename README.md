@@ -33,6 +33,37 @@ First
 
 ![image](https://user-images.githubusercontent.com/14288989/216918453-0d4f000c-fee0-430f-982a-ab97db24cc44.png)
 
+
+## Programming with SQLite3 connector
+
+#include <sqlite3.h>
+#include <stdio.h>
+
+void main() {
+
+   printf ("hello world from sqllite3 header file inclusion\n");
+
+   sqlite3 *db;
+   char *zErrMsg = 0;
+   int rc;
+
+   rc = sqlite3_open("test.db", &db);
+
+   if( rc ) {
+      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+      return;
+   } else {
+      fprintf(stderr, "Opened database successfully\n");
+   }
+   sqlite3_close(db);
+   return;
+}
+
+cc -o test test.c -l sqlite3
+
+![image](https://user-images.githubusercontent.com/14288989/217795828-2d4fd9d5-b42e-49cc-99b0-55755ee26842.png)
+
+
 Note : Installing mysql-server does not work - see below !
 
 ```
