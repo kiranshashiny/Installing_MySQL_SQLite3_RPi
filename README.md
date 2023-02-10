@@ -464,11 +464,14 @@ cc -o test test.c -l sqlite3
 
 https://www.tutorialspoint.com/sqlite/index.htm
 
-Commands ( don't use semi colons at the end )
+### Commands ( don't use semi colons at the end )
 
+```
 .open test.db
 .databases
 .tables
 .drop TABLE COMPANY
 
 select * from COMPANY
+
+```
