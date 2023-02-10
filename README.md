@@ -308,6 +308,27 @@ sudo apt-get install libsqlite3-dev
 
 ```
 
+## command line 
+
+.read department.sql <------------- Reads from an external file.
+
+```
+.open test.db
+.schema DEPARTMENT
+insert into DEPARTMENT  ( ID, DEPT, EMP_ID ) values  ( 3, 'CHEM', 1200);
+select * from DEPARTMENT;
+
+```
+
+A sample table DEPARTMENT can be 
+
+CREATE TABLE DEPARTMENT(
+   ID INT PRIMARY KEY      NOT NULL,
+   DEPT           CHAR(50) NOT NULL,
+   EMP_ID         INT      NOT NULL
+);
+
+
 ## Programming with sqlite3 C connector
 
 https://www.tutorialspoint.com/sqlite/sqlite_c_cpp.htm
