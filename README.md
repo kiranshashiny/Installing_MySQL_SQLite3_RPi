@@ -468,10 +468,16 @@ https://www.tutorialspoint.com/sqlite/index.htm
 
 ```
 .open test.db
+
 .databases
+
 .tables
+
+.schema COMPANY  // to list the columns of table COMPANY
+
 .drop TABLE COMPANY
 
-select * from COMPANY
+select * from COMPANY.    // no period required at the beginning
+
 
 ```
