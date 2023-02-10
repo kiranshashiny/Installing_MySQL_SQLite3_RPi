@@ -36,6 +36,8 @@ First
 
 ## Programming with SQLite3 connector
 
+```
+
 #include <sqlite3.h>
 #include <stdio.h>
 
@@ -58,7 +60,7 @@ void main() {
    sqlite3_close(db);
    return;
 }
-
+```
 cc -o test test.c -l sqlite3
 
 ![image](https://user-images.githubusercontent.com/14288989/217795828-2d4fd9d5-b42e-49cc-99b0-55755ee26842.png)
